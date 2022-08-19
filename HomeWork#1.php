@@ -17,7 +17,7 @@ function exercise1()
     $age= "21";
     echo("Меня зовут: $name \n");
     echo("Мне $age год \n");
-    echo("“!|/’”\\\n");
+    echo("\"!|/'\"\\\n");
 }
 
 exercise1();
