@@ -20,27 +20,27 @@ function task1($array = array(),$parameter = false)
 Пример вызова: calcEverything(‘+’, 1, 2, 3, 5.2);
 Результат: 1 + 2 + 3 + 5.2 = 11.2
  */
-function task2($mathAction,...$arrayNumbers)
+function task2(string $mathAction,...$arrayNumbers)
 {
     $result=$arrayNumbers[0];
-    if ($mathAction=="+"){
+    if ($mathAction=='+'){
         foreach (array_slice($arrayNumbers,1) as $number){
             $result=$result+$number;
         }
-    }elseif ($mathAction=="-"){
+    }elseif ($mathAction=='-'){
         foreach (array_slice($arrayNumbers,1) as $number){
             $result=$result-$number;
         }
-    }elseif ($mathAction=="*"){
+    }elseif ($mathAction=='*'){
         foreach (array_slice($arrayNumbers,1) as $number){
             $result=$result*$number;
         }
-    }elseif ($mathAction=="/"){
+    }elseif ($mathAction=='/'){
         foreach (array_slice($arrayNumbers,1) as $number){
             $result=$result/$number;
         }
     }
-    echo $result."<br>";
+    echo $result.'<br>';
 }
 
 /*
@@ -53,27 +53,20 @@ function task3($x,$y)
     if(is_int($x)!==true || is_int($y)!==true){
         throw new Exception('X или Y не целое число');
     }
-?>
-<html>
-<body>
-<table cellpadding="1" border = "1">
-    <?php for($top = 0; $top <= $x; $top++) {
-    echo'<tr>';
-    for($side = 0; $side <= $y; $side++)
-    {
-        $product=$side*$top;
-        echo '<td>';
-        if($side==0&&$top==0) {echo 'X';continue;}
-        if($side==0) {echo $top;continue;}
-        if($top==0) {echo $side;continue;}
-        echo $product;
+    echo ("<table cellpadding='1' border = '1'>");
+        for($top = 0; $top <= $x; $top++) {
+        echo'<tr>';
+        for($side = 0; $side <= $y; $side++)
+        {
+            $product=$side*$top;
+            echo '<td>';
+            if($side==0&&$top==0) {echo 'X';continue;}
+            if($side==0) {echo $top;continue;}
+            if($top==0) {echo $side;continue;}
+            echo $product;
+        }
     }
-}
-?>
-</table>
-</body>
-</html>
-<?php
+    echo ('</table>');
 }
 /*
 Выведите информацию о текущей дате в формате 31.12.2016 23:59
@@ -83,7 +76,7 @@ function task4()
 {
     date_default_timezone_set('Europe/Moscow');
     echo date('j.m.Y H:i')."<br>";
-    echo strtotime("24.02.2016 00:00:00")."<br>";
+    echo strtotime('24.02.2016 00:00:00').'<br>';
 }
 /*
 Дана строка: “Карл у Клары украл Кораллы”. Удалить из этой строки все заглавные буквы “К”.
@@ -91,10 +84,11 @@ function task4()
  */
 function task5()
 {
-    $stringFirst="Карл у Клары украл Кораллы";
-    $stringSecond="Две бутылки лимонада";
-    echo str_replace("К","",$stringFirst)."<br>";
-    echo str_replace("Две","Три",$stringSecond)."<br>";
+    $stringFirst='Карл у Клары украл Кораллы';
+    $stringSecond='Две бутылки лимонада';
+
+    echo str_replace('К','',$stringFirst).'<br>';
+    echo str_replace('Две','Три',$stringSecond).'<br>';
 }
 /*
 Создайте файл test.txt средствами PHP. Поместите в него текст - “Hello again!”
@@ -102,8 +96,8 @@ function task5()
  */
 function createFile()
 {
-    $text="Hello again!";
-    $file=fopen("test.txt","w");
+    $text='Hello again!';
+    $file=fopen('test.txt','w');
     fwrite($file,$text);
     fclose($file);
 }

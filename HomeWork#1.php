@@ -15,6 +15,7 @@ function exercise1()
 {
     $name= "Николай";
     $age= "21";
+
     echo("Меня зовут: $name \n");
     echo("Мне $age год \n");
     echo("\"!|/'\"\\\n");
@@ -27,9 +28,10 @@ exercise1();
  */
 function exercise2()
 {
+    echo('На школьной выставке 80 рисунков. 23 из них выполнены фломастерами, 40 карандашами, а остальные — красками. Сколько рисунков, выполненные красками, на школьной выставке?'."\n");
     $knownAmount= PEN_DRAWINGS+PENCIL_DRAWINGS;
     $paintDrawings= TOTAL_DRAWINGS-$knownAmount;
-    echo("На школьной выставке $paintDrawings картин краской\n");
+    echo("На школьной выставке $paintDrawings картин краской.\n");
 }
 
 exercise2();
@@ -48,15 +50,16 @@ function exercise3()
     $retirementAge=65;
     $carierStartAge=18;
     $age=rand(0,150);
-    if ($age>$max || $age<$min){
-       echo("Неизвестный возраст");
+
+    if ($age > $max || $age < $min){
+       echo('Неизвестный возраст');
     } else {
         if ($age >= $carierStartAge && $age <= $retirementAge) {
-            echo("Вам еще работать и работать");
+            echo('Вам еще работать и работать');
         } elseif ($age > $retirementAge) {
-            echo("Вам пора на пенсию");
+            echo('Вам пора на пенсию');
         } elseif ($age <= $carierStartAge - $min && $age >= $min) {
-            echo("Вам ещё рано работать");
+            echo('Вам ещё рано работать');
         }
     }
     echo("\n");
@@ -109,29 +112,29 @@ name  model speed  doors  year
 function exercise5()
 {
     $cars = array (
-        "BMW" => array(
-            "model" => "X5",
-            "speed" => 120,
-            "doors" => 5,
-            "year" => 2015
+        'BMW' => array(
+            'model' => 'X5',
+            'speed' => 120,
+            'doors' => 5,
+            'year' => 2015
         ),
-        "Toyota" => array(
-            "model" => "Camry",
-            "speed" => 210,
-            "doors" => 4,
-            "year" => 2020
+        'Toyota' => array(
+            'model' => 'Camry',
+            'speed' => 210,
+            'doors' => 4,
+            'year' => 2020
         ),
-        "Opel" => array(
-            "model" => "Astra",
-            "speed" => 110,
-            "doors" => 3,
-            "year" => 2009
+        'Opel' => array(
+            'model' => 'Astra',
+            'speed' => 110,
+            'doors' => 3,
+            'year' => 2009
         )
     );
-    $arr = array("BMW", "Toyota", "Opel");
-    foreach ($arr as $value){
+
+    foreach (array('BMW', 'Toyota', 'Opel') as $value){
         echo "CAR $value \n";
-        print_r(implode(" ", $cars["$value"])."\n");
+        echo(implode(" ", $cars["$value"])."\n");
     }
 }
 
