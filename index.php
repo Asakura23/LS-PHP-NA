@@ -16,3 +16,5 @@ task5();
 createFile();
 task6('test.txt');
 
+task7();
+
